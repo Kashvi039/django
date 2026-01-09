@@ -4,6 +4,7 @@ from . models import category,Blog
 class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields={'slug' : ('title',)}
     list_display= ('title','Category','author','status','is_featured')
+    list_editable=('is_featured',)
 
 
 # Register your models here.

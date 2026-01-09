@@ -57,11 +57,12 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / "template"],
         'APP_DIRS': True,
-        'OPTIONS': {
+        'OPTIONS': {                        
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blogs.context_preprocessor.get_category',
             ],
         },
     },
