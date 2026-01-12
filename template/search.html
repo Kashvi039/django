@@ -1,14 +1,10 @@
-{% extends 'base.html' %}
-
-
+{% extends "base.html" %}
 {% block content %}
-
-   
- <div class="text-uppercase text-warning" style="letter-spacing: 2px;">Category</div>
+<div class="text-uppercase text-warning" style="letter-spacing: 2px;">Category</div>
 
   <div class="row mb-2">
-    {% if posts %}
-    {% for post in posts %}
+    {% if blogs %}
+    {% for post in blogs %}
     
     <div class="col-md-6">
       <div class="card border-0" >
