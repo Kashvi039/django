@@ -22,6 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
      path('', include('blogs.urls')),
      path('category/', include('blogs.urls')),
-     path('blogs/search/',include('blogs.urls'))
+     path('blogs/search/',include('blogs.urls')),
+     path('register/',include('blogs.urls')),
+     path('login/',include('blogs.urls')),
+      path('logout/',include('blogs.urls')),
+      
      
 ]
