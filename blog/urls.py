@@ -25,7 +25,12 @@ urlpatterns = [
      path('blogs/search/',include('blogs.urls')),
      path('register/',include('blogs.urls')),
      path('login/',include('blogs.urls')),
-      path('logout/',include('blogs.urls')),
+     
+     path('dasboard/',include('dashboards.urls')),
+     path('categories/',include('dashboards.urls')),
+     path('categories/add/',include('dashboards.urls')),
+      path('categories/edit/<int:pk>/',include('dashboards.urls')),
+       path('categories/delete/<int:pk>/',include('dashboards.urls')),
       
      
 ]

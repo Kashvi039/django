@@ -6,6 +6,7 @@ from django.db.models import Q
 from blog.forms import RegistrationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
+app_name = 'blogs'
 
 
 # Create your views here.
@@ -65,15 +66,16 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                return redirect('home')
+            return redirect('dashboard')
      form= AuthenticationForm()
      context={
           'form': form        
      }
      return render(request,'login.html',context)
 def logout(request):                                                                                          
-     auth.logout(request)                                                        
-     return redirect('login')
+     auth.logout(request)   
+     return redirect('home')                                                     
+    
      
      
 
