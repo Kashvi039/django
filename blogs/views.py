@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from blogs.models import category,Blog
+from .models import category,Blog, Comment
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from blog.forms import RegistrationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 app_name = 'blogs'
+
 
 
 # Create your views here.
@@ -29,8 +30,10 @@ def postsbycategory(request,category_id):
      return render(request, 'postsbycategory.html', context)
 def blogs(request,slug):
      single_blog= get_object_or_404(Blog,slug=slug,status=1)
+     comments = Comment.objects.filter(blog=single_blog)
      context={
           'single_blog':single_blog,
+          'comments':comments,
      }
      return render(request,'blogs.html',context)
 def search(request):

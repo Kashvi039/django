@@ -14,7 +14,8 @@ urlpatterns = [
     path('posts/add/',views.addPost,name='addPost'),
    path('posts/edit/<int:pk>/',views.editpost,name='editpost'),
     path('posts/delete/<int:pk>/',views.delpost,name='delpost'),
-   
+   path('users/',views.users,name='users'),
+   path('users/add/',views.add_users,name='add_users'),
        
       
      

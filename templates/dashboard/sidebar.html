@@ -5,6 +5,10 @@
                class="nav-link text-dark {% if request.resolver_match.url_name == 'dashboard' %} bg-warning {% endif %}">
                 Dashboard
             </a>
+            <a href="{% url 'users' %}"
+               class="nav-link text-dark {% if request.resolver_match.url_name == 'users' %} bg-warning {% endif %}">
+                Users
+            </a>
 
             <a href="{% url 'categories' %}"
                class="nav-link text-dark {% if request.resolver_match.url_name == 'categories' %} bg-warning {% endif %}">
