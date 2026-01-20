@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <!-- LEFT SIDEBAR -->
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- RIGHT CONTENT -->
+    <div class="col-md-9">
+
+        <table class="table table-hover">
+  <thead>
+    <h3>All Blogs</h3>
+    <a href="{% url 'addPost' %}" class="btn btn-dark text-light float-right">Add New</a>
+    <tr>
+       <th>#</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Author</th>
+      <th>Status</th>
+      <th>Featured</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for post in posts %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ post.title }}</td>
+      <td>{{post.Category}}</td>
+      <td>{{post.author}}</td>
+      <td>{{post.Status}}</td>
+      <td>{{post.is_featured}}</td>
+      <td>
+      <a href="{% url 'editpost' post.pk %}"><i class="fas fa-edit text-success"></i></a>
+&nbsp;
+<a href="{% url 'delpost' post.pk %}"><i class="fas fa-trash text-danger"></i></a>
+
+      </td>
+    </tr>
+    {% endfor %}
+   
+  </tbody>
+</table>
+
+    </div>
+</div>
+
+{% endblock %}

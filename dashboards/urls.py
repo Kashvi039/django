@@ -5,12 +5,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('dasboard/', views.dashboard, name="dashboard"),
+    path('dashboard/', views.dashboard, name="dashboard"),
     path('categories/',views.categories,name='categories'),
-     path('categories/add/',views.addCategory,name='addCategory'),
-     path('categories/edit/<int:pk>/',views.editCategory,name='editCategory'),
-      path('categories/delete/<int:pk>/',views.deleteCategory,name='deleteCategory'),
-    
+    path('categories/add/',views.addCategory,name='addCategory'),
+    path('categories/edit/<int:pk>/',views.editCategory,name='editCategory'),
+    path('categories/delete/<int:pk>/',views.deleteCategory,name='deleteCategory'),
+    path('posts/',views.posts,name='posts'),
+    path('posts/add/',views.addPost,name='addPost'),
+   path('posts/edit/<int:pk>/',views.editpost,name='editpost'),
+    path('posts/delete/<int:pk>/',views.delpost,name='delpost'),
+   
+       
       
      
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
